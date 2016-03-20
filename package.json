@@ -1,0 +1,23 @@
+{
+  "name": "fse-promise",
+  "version": "0.0.0",
+  "description": "Promisefied version of fs-extra and fs that preserves callbacks",
+  "main": "index.js",
+  "dependencies": {
+    "fs-extra": "^0.26.7"
+  },
+  "keywords": [
+    "fs",
+    "fs-extra",
+    "promise"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hakovala/node-fse-promise.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hakovala/node-fse-promise/issues"
+  },
+  "author": "Harri Kovalainen <hakovala@gmail.com>",
+  "license": "MIT"
+}
