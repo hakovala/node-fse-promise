@@ -84,7 +84,7 @@ function callPromise(fn, args) {
 		function callback(err) {
 			if (err) return reject(err);
 			let args = Array.prototype.slice.call(arguments, 1);
-			return resolve.apply(null, args);
+			return resolve(args.length <= 1 ? args[0] : args);
 		}
 		fn.apply(null, args.concat([callback]));
 	});
