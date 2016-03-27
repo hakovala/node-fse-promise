@@ -31,7 +31,6 @@ const METHODS = [
 	'chmod',
 	'chown',
 	'close',
-	'exists',
 	'fchmod',
 	'fchown',
 	'fdatasync',
