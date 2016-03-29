@@ -82,10 +82,10 @@ function callCallback(fn, args) {
 function callPromise(fn, args) {
 	return new Promise((resolve, reject) => {
 		// promisified callback
-		function callback(err) {
-			if (err) return reject(err);
-			let args = Array.prototype.slice.call(arguments, 1);
-			return resolve(args.length <= 1 ? args[0] : args);
+		function callback(err,other) {
+			if (err && !(typeof err === 'boolean')) return reject(err);
+			let args = arguments;
+			return resolve(args.length <= 1 ? args[0] : args.slice(1));
 		}
 		fn.apply(null, args.concat([callback]));
 	});
