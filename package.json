@@ -1,6 +1,6 @@
 {
   "name": "fse-promise",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Promisefied version of fs-extra and fs that preserves callbacks",
   "main": "index.js",
   "dependencies": {
