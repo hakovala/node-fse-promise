@@ -31,7 +31,7 @@ const METHODS = [
 	'chmod',
 	'chown',
 	'close',
-	'exists',
+	'exists', // NOTE: this is a special case, and also deprecated in latest Node.js
 	'fchmod',
 	'fchown',
 	'fdatasync',
@@ -83,9 +83,13 @@ function callPromise(fn, args) {
 	return new Promise((resolve, reject) => {
 		// promisified callback
 		function callback(err,other) {
+			// check if the 'err' is boolean, if so then this is a 'exists' callback special case
 			if (err && !(typeof err === 'boolean')) return reject(err);
-			let args = arguments;
-			return resolve(args.length <= 1 ? args[0] : Array.prototype.slice.call(args,1));
+			// convert arguments to proper array
+			let args = Array.prototype.slice.call(arguments);
+			// if arguments length is one or more resolve arguments as array,
+			// otherwise resolve the argument as is.
+			return resolve(args.length < 2 ? args[0] : args.slice(1));
 		}
 		fn.apply(null, args.concat([callback]));
 	});
