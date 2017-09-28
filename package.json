@@ -4,7 +4,7 @@
   "description": "Promisefied version of fs-extra and fs that preserves callbacks",
   "main": "index.js",
   "dependencies": {
-    "fs-extra": "^0.26.7"
+    "fs-extra": "^4.0.2"
   },
   "keywords": [
     "fs",
