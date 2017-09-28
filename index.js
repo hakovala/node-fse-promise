@@ -84,7 +84,7 @@ function callPromise(fn, args) {
 		// promisified callback
 		function callback(err,other) {
 			// check if the 'err' is boolean, if so then this is a 'exists' callback special case
-			if (err && !(typeof err === 'boolean')) return reject(err);
+			if (err && (typeof err !== 'boolean')) return reject(err);
 			// convert arguments to proper array, ignoring error argument
 			let args = Array.prototype.slice.call(arguments, 1);
 			// if arguments length is one or more resolve arguments as array,
