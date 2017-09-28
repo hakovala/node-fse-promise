@@ -89,7 +89,7 @@ function callPromise(fn, args) {
 			let args = Array.prototype.slice.call(arguments, 1);
 			// if arguments length is one or more resolve arguments as array,
 			// otherwise resolve the argument as is.
-			return resolve(args.length < 2 ? args[0] : args.slice(1));
+			return resolve(args.length < 2 ? args[0] : args);
 		}
 		fn.apply(null, args.concat([callback]));
 	});
